@@ -1,3 +1,5 @@
+This repository was made for testing purpose.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
