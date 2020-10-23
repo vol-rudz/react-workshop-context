@@ -1,0 +1,24 @@
+sidebar {
+    height: 100%;
+    position: absolute;
+    background: white;
+    z-index: 1;
+}
+
+sidebar .body {
+    height: calc(100% - 54px);
+    overflow: scroll;
+}
+
+sidebar div {
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+sidebar .react-datepicker-wrapper {
+    padding-right: 30px;
+}
+
+sidebar td {
+    padding: 5px;
+}
