@@ -2,69 +2,41 @@ This repository was made for testing purpose.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Start the project
 
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To run the project locally run `yarn && yarn start` command in the project directory
+Then go to [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `yarn test`
+### What you need to do
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The idea of our workshop is to try different state management tools combined with React. <br />
+The main goal is to understand for which purpose which tool is the best. <br />
 
-### `yarn build`
+We have prepared for you several statements, and we want you to think about them during the implementation of the task. <br />
+In the end you will have around 5 mins for a short presentation from your team with short talk throw those statements, so the main goal its not a success realization of the task, but understanding the proc and cons regarding your tool. <br />
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<h4 /> Here is a statements: 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- performance (what do you think about performance of the app using this tool).
+- scalability (is it easy to scale the project using this tool).
+- maintenance (is it easy to navigate throw the project, understand the file structure etc).
+- tool complexity (is it easy to start with this tool without previous experience).
+- the stronger side of this tool.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h4 /> Project task
 
-### `yarn eject`
+We need to build the map of Ukraine with the numbers of cases regarding Covid 19 by regions. <br />
+Here you can see [the example](https://covid19.rnbo.gov.ua/). <br />
+We have prepared ready React application with all needed layouts, npm packages including needed state management tool.
+All you need is to use provided URL and using defined state management tool implement needed calls, and display the data within prepared layout. <br />
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<h4 /> Project structure
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Under the `src` folder you can find:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- `api` folder where you actually can find needed URL
+- `components` here you can see the `map` component, `markerItem` component, here you need to put the data for each region
+and the `App` as a main component.
