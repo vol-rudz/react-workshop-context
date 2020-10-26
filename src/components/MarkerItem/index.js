@@ -8,7 +8,7 @@ const MarkerItem = ({ marker }) => {
     <>
       <ReactTooltip id={marker.label.uk} place="top" effect="solid">
         <h4>{marker.label.uk}</h4>
-        <div>Виявленно: {marker.confirmed}</div>
+        <div>Виявлено: {marker.confirmed}</div>
         <div>Померло: {marker.deaths}</div>
         <div>Одужало: {marker.recovered}</div>
         <div>Хворіє: {marker.existing}</div>
