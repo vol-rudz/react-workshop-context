@@ -14,7 +14,7 @@ const Sidebar = () => {
     return `${dateObj.getFullYear()}-${dateObj.getMonth() + 1}-${dateObj.getDate()}`
   }, [date]);
   return (
-    <sidebar style={{
+    <aside style={{
       width: expanded ? '40%' : '50px'
     }}>
       <div>
@@ -38,7 +38,7 @@ const Sidebar = () => {
           </div>
         )
       }
-    </sidebar>
+    </aside>
   )
 };
 

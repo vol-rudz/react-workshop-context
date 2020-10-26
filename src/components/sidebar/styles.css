@@ -1,24 +1,24 @@
-sidebar {
+aside {
     height: 100%;
     position: absolute;
     background: white;
     z-index: 1;
 }
 
-sidebar .body {
+aside .body {
     height: calc(100% - 54px);
     overflow: scroll;
 }
 
-sidebar div {
+aside div {
     cursor: pointer;
     padding-bottom: 10px;
 }
 
-sidebar .react-datepicker-wrapper {
+aside .react-datepicker-wrapper {
     padding-right: 30px;
 }
 
-sidebar td {
+aside td {
     padding: 5px;
 }
