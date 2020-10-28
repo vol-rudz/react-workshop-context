@@ -21,6 +21,6 @@ const App = () => {
       </DataContext.Provider>
     </div>
   );
-}
+};
 
 export default App;
