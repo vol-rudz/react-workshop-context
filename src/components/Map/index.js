@@ -12,7 +12,7 @@ const Map = () => {
 
   useEffect(() => {
     // TODO: replace Promise by React Context
-    // TODO: use formattedDay from the <Sidebar /> if it was selected instead of TODAY()
+    // TODO: use getFormattedDay from utils.js in <Sidebar /> if it was selected instead of TODAY()
     getData(TODAY()).then(setMarkers);
   }, []);
 

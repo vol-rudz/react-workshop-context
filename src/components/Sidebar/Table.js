@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from 'react';
-import {getData} from "../../api";
-import {TODAY} from "../Map/constants";
+import React, { useEffect, useState } from 'react';
+import { getData } from "../../api";
+import { TODAY } from "../Map/constants";
 
 const Table = () => {
-  const [markers, setMarkers] = useState([]);
+  const [data, setData] = useState([]);
 
   // TODO: replace Promise by React Context
-  // TODO: use formattedDay from the <Sidebar /> if it was selected instead of TODAY()
+  // TODO: use getFormattedDay from utils.js in <Sidebar /> if it was selected instead of TODAY()
   useEffect(() => {
-    getData(TODAY()).then(setMarkers);
+    getData(TODAY()).then(setData);
   }, []);
   return (
     <table>
@@ -22,7 +22,7 @@ const Table = () => {
           <th>Підозри</th>
         </tr>
         {
-          markers.map(item => (
+          data.map(item => (
             <tr key={item.id}>
               <td>{item.label.uk}</td>
               <td>{item.confirmed}</td>
