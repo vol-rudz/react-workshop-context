@@ -8,13 +8,7 @@ import {DataContext} from "../../context";
 
 const Map = () => {
   const [viewport, setViewport] = useState(INITIAL_VIEWPORT);
-  const [markers, setMarkers] = useState([]);
-
   const { data } = useContext(DataContext);
-
-  useEffect(() => {
-    setMarkers(data);
-  }, [data]);
 
   return (
     <ReactMapGL
@@ -23,7 +17,7 @@ const Map = () => {
       onViewportChange={setViewport}
       mapStyle={MAP_STYLE}
     >
-      {markers.map(marker => (
+      {data.map(marker => (
         <MarkerItem key={marker.id} marker={marker} />
       ))}
     </ReactMapGL>
