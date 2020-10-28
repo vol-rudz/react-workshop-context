@@ -11,6 +11,8 @@ const Map = () => {
   const [markers, setMarkers] = useState([]);
 
   useEffect(() => {
+    // TODO: replace Promise by React Context
+    // TODO: use formattedDay from the <Sidebar /> if it was selected instead of TODAY()
     getData(TODAY()).then(setMarkers);
   }, []);
 
@@ -20,7 +22,7 @@ const Map = () => {
       mapboxApiAccessToken={TOKEN}
       onViewportChange={setViewport}
       mapStyle={MAP_STYLE}
-    > 
+    >
       {markers.map(marker => (
         <MarkerItem key={marker.id} marker={marker} />
       ))}

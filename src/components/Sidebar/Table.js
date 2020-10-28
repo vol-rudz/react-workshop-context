@@ -5,6 +5,8 @@ import {TODAY} from "../Map/constants";
 const Table = () => {
   const [markers, setMarkers] = useState([]);
 
+  // TODO: replace Promise by React Context
+  // TODO: use formattedDay from the <Sidebar /> if it was selected instead of TODAY()
   useEffect(() => {
     getData(TODAY()).then(setMarkers);
   }, []);
