@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import ReactMapGL from 'react-map-gl';
-import { getData } from '../../api';
-import { INITIAL_VIEWPORT, TODAY, TOKEN } from './constants';
+import { INITIAL_VIEWPORT, TOKEN } from './constants';
 import MarkerItem from '../MarkerItem';
 import MAP_STYLE from './styles.json';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import {DataContext} from "../../context";
 
 const Map = () => {
   const [viewport, setViewport] = useState(INITIAL_VIEWPORT);
   const [markers, setMarkers] = useState([]);
 
+  const { data } = useContext(DataContext);
+
   useEffect(() => {
-    // TODO: replace Promise by React Context
-    // TODO: use formattedDay from the <Sidebar /> if it was selected instead of TODAY()
-    getData(TODAY()).then(setMarkers);
-  }, []);
+    setMarkers(data);
+  }, [data]);
 
   return (
     <ReactMapGL
