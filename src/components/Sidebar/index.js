@@ -1,5 +1,5 @@
 import React, {useState, useContext, useCallback} from 'react';
-import { DataContext } from '../../context';
+import { DataContext } from '../../store/context';
 import DatePicker from "react-datepicker";
 import { GrFormNext } from 'react-icons/gr';
 import { GrFormPrevious } from 'react-icons/gr';
@@ -8,17 +8,18 @@ import { getFormattedDay } from "../../utils";
 import { getData } from "../../api";
 import './styles.css';
 import "react-datepicker/dist/react-datepicker.css";
+import { setData } from "../../store/actionCreators";
 
 const Sidebar = () => {
   const [expanded, setExpanded] = useState(false);
   const [date, setDate] = useState(new Date());
-  const { setContextData } = useContext(DataContext);
+  const { dispatch } = useContext(DataContext);
 
   const handleDateChange = useCallback(date => {
     setDate(date);
     const formattedDay = getFormattedDay(date);
-    getData(formattedDay).then(setContextData);
-  }, [setDate, setContextData]);
+    getData(formattedDay).then(data => dispatch(setData(data)));
+  }, [setDate, dispatch]);
 
   return (
     <aside style={{

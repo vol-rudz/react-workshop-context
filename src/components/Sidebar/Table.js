@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
-import { DataContext } from "../../context";
+import { DataContext } from "../../store/context";
 
 const Table = () => {
-  const { data } = useContext(DataContext);
+  const { state } = useContext(DataContext);
+  const { data } = state;
 
   return (
     <table>

@@ -1,21 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import Map from './Map';
 import './App.css';
 import Sidebar from './Sidebar';
-import { DataContext } from '../context';
+import { initialState, dataReducer } from '../store/reducer';
 import { getData } from "../api";
 import { TODAY } from "./Map/constants";
+import { DataContext } from "../store/context";
+import { setData } from "../store/actionCreators";
 
 const App = () => {
-  const [data, setData] = useState([]);
+  const [state, dispatch] = useReducer(dataReducer, initialState);
 
   useEffect(() => {
-    getData(TODAY()).then(setData);
+    getData(TODAY()).then(data => dispatch(setData(data)));
   }, []);
 
   return (
     <div className="App">
-      <DataContext.Provider value={{ data, setContextData: setData }}>
+      <DataContext.Provider value={{ dispatch, state }}>
         <Sidebar />
         <Map />
       </DataContext.Provider>
